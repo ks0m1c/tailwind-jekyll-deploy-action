@@ -54,6 +54,14 @@ source ${SCRIPT_DIR}/script/init_environment.sh
 
 cd ${JEKYLL_SRC}
 
+
+# Download and install Tailwind CSS Standalone CLI
+echo "Downloading Tailwind CSS Standalone CLI"
+curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-arm64
+chmod +x tailwindcss-linux-arm64
+sudo mv tailwindcss-linux-arm64 /usr/local/bin/tailwindcss # Move to a directory in PATH
+
+
 # Check and execute pre_build_commands commands
 if [[ ${PRE_BUILD_COMMANDS} ]]; then
   echo "Executing pre-build commands"
