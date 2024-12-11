@@ -38,6 +38,10 @@ if ! asdf list ruby ${RUBY_VER} &>/dev/null; then
   asdf install ruby ${RUBY_VER}
 fi
 
+asdf plugin add tailwindcss
+asdf install tailwindcss latest
+asdf global tailwindcss latest
+
 asdf global ruby ${RUBY_VER}
 
 # debug
